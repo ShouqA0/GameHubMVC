@@ -1,0 +1,45 @@
+@model GameHubMVC.Models.GameCharacter
+
+@{
+    ViewData["Title"] = "Edit Game Character";
+}
+
+<h1>Edit Game Character</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Name</label><br />
+        <input asp-for="Name" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Game</label><br />
+        <input asp-for="Game" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Role</label><br />
+        <input asp-for="Role" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Level</label><br />
+        <input asp-for="Level" type="number" />
+    </div>
+
+    <br />
+
+    <button type="submit">Save</button>
+</form>
+
+<br />
+
+<a asp-action="Index">Back to List</a>

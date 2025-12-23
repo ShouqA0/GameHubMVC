@@ -1,0 +1,44 @@
+@model GameHubMVC.Models.GameCharacter
+
+@{
+    ViewData["Title"] = "Create Game Character";
+}
+
+<h1>Create Game Character</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Name</label><br />
+        <input asp-for="Name" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Game</label><br />
+        <input asp-for="Game" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Role</label><br />
+        <input asp-for="Role" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Level</label><br />
+        <input asp-for="Level" type="number" />
+    </div>
+
+    <br />
+
+    <button type="submit">Create</button>
+</form>
+
+<br />
+
+<a asp-action="Index">Back to List</a>

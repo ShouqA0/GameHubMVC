@@ -1,0 +1,42 @@
+@model IEnumerable<GameHubMVC.Models.GameCharacter>
+
+@{
+    ViewData["Title"] = "Game Characters";
+}
+
+<h1>Game Characters</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@if (!Model.Any())
+{
+    <p>No characters found.</p>
+}
+else
+{
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Name</th>
+            <th>Game</th>
+            <th>Role</th>
+            <th>Level</th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Game</td>
+                <td>@item.Role</td>
+                <td>@item.Level</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
